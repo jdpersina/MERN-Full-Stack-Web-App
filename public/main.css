@@ -1,0 +1,260 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /*Add fonts from the app's server 
+    @font-face {                
+      font-family: 'FontName';
+      src: url('FontName.woff2') format('woff2');
+    } 
+    ...or hosted services like Google Fonts 
+    @import url(//fonts.googleapis.com/css?family=Font+Name);*/
+
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&family=PT+Serif:wght@700&family=Ubuntu:ital,wght@1,700&display=swap');
+    /*font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Serif', serif;
+    font-family: 'Ubuntu', sans-serif;*/
+
+  
+  
+    /*@import 'node_modules/modern-normalize/modern-normalize.css';*/
+        /*npm install modern-normalize
+          Resets elements for browser consistency.  
+          https://www.npmjs.com/package/modern-normalize*/
+  
+  /* Component-specific stylesheets, if any. 
+    @import "component1.css";   
+  */
+
+/*   ----- Variables  -----  */
+:root {
+    --purple: #C96AF5;
+    --deep-blue: #4038FF;
+    --dark-blue: #B3B3FF;
+    --medium-blue: rgba(143, 245, 255, 0.65);
+    --light-blue: #C4FFF4; 
+    --accent-color: #FF2047;
+    --transparent-gray: rgba(131, 145, 171, 0.64);
+    --custom-color-name:;
+    --custom-embellishment-name:;
+  }
+  
+  /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+  body {       /* Can alternatively define in html {} or :root {} */
+    background-color:;
+    background-image: url('images/rave-rock-at-coopers-rock-park.jpg');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--deep-blue);;
+    font-family: 'Open Sans', sans-serif; /* Define with at least one font name and its related generic family name.*/
+    margin: 5%;
+    padding: 1%;
+    min-width: 15%;
+  }
+  
+  /*  ----- Page layout blocks -----  */
+  header {
+    color: var(--light-blue);
+    background-image: url('images/the-bubbles-at-acadia.jpeg');
+    background-position: ;
+    font-size: 24px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--accent-color);
+    padding: 5%;
+  }
+  main {
+    background-color: var(--medium-blue);
+    padding: 4%;
+  }
+  section {
+    background-color: var(--transparent-gray);
+    padding: 3%;
+  }
+    article {}
+      #topic1 {}
+      #topic2 {}
+  div {}
+  aside {}
+  footer {
+    color: var(--accent-color);
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--light-blue);
+    padding: 2%;
+  }
+  
+  /* ----- Anchors ----- Text links */
+  a {}
+  a:link {}
+  a:hover {}
+  a:active {}
+  a:visited {}
+  
+  /*  ----- Navigation ----- Override text links for navigation only.  */
+  nav {
+    text-align: center;
+  }
+  nav a {
+    display: inline-block;
+    padding: 1% 2%;
+    background-color: var(--purple);
+    color: whitesmoke;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1%;
+  }
+  nav a:hover {
+    background-color: var(--deep-blue);
+  }
+  
+  /*  -----  Typography  ----- */
+  p {}
+  br {}
+  ol, ul, dl {}
+  li {}
+  dt {}
+  dd {}
+  
+  h1, h2, h3, h4, h5, h6 {} 
+  h1 {}
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'PT Serif', serif;
+  }
+  h3 {
+    font-size: 21px;
+    font-family: 'PT Serif', serif;
+  }
+  h4 {
+    font-size: 18px;
+    font-family: 'PT Serif', serif;
+  }
+  h5 {}
+  h6 {}
+  
+  abbr {}
+  acronym {}
+  address {}
+  blockquote {}
+    q {}
+    cite {}
+  em {}
+  hr {}
+  mark {}
+  s {}
+  span {}
+  strong {
+    font-weight: 700;
+  }
+  sub {}
+  sup {}
+  time {}
+  
+  /*  ----- Coding or instructional typography ----- */
+  pre {}
+  code {}
+  kbd {}
+  samp {}
+  var {}
+  del {} 
+  ins {}
+  
+  /*  ----- Table ----- */
+  table {}
+  caption {}
+  thead {}
+  tbody {}
+  tfoot {}
+  tr {}
+    tr:nth-child(even) {}
+  th {}
+  td {}
+    td:nth-child(1) {}
+  colgroup {}
+  data {}
+  datalist {}
+  
+  
+  /*  ----- Form ----- */
+  form {}
+  fieldset {}
+    legend {}
+  label {}
+    button {}
+    input {}
+    output {}
+    meter {}
+    progress {}
+    select {}
+      optgroup {}
+      option {}
+    textarea {}
+  
+  /* ----- Media ----- */
+  figure {
+    width: 400px;
+    margin: .75%;
+    padding: 0;
+    border: 2px solid black;
+  }
+    figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    }
+    figure img {
+    width:100%;
+    }
+  svg {}
+  picture {}
+  source {}
+  iframe {}
+  video {}
+  audio {}
+  embed {}
+  object {}
+  
+  /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+  .gallery {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .floatright {}
+  .floatleft {}
+  .center-middle {}
+  
+  .ten {}
+  .twenty {}
+  .thirty {}
+  .forty {}
+  .fifty {}
+  .sixty {}
+  .seventy {}
+  .eighty {}
+  
+  .radius {}
+  .circle {}
+  .boxshadow {}
+  .tshadow {} 
+  .gradient {}
+  .shape {}
+  
+  @keyframes App-logo {}
+  
+  /*   ===== TABLET  media query overrides mobile styles ===== */
+  @media all and (min-width: 600px) {}
+  
+  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+  @media all and (min-width: 1080px) {}
+  
+  /*   ===== PRINT  media query overrides previous styles =====  */
+  @media print {}
+  
