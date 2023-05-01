@@ -22,8 +22,111 @@
         <section>
             <h2>Contact</h2>
             <article>
-                
+                <p>On this form you can contact me to tell me how I'm doing on this website. You can also 
+                    make inquiries about my work, study, and myself. You'll need to provide some information 
+                    about yourself so I know how to get back in touch with you for any necessary follow-ups.
+                </p>
             </article>
+
+            <form action="/completedForms" method="POST">
+            <Fieldset>
+                <legend>A little bit about you</legend>
+
+                <p>
+                <label for="firstlastname" class="required">Your First and Last Name: </label>
+                    <div>
+                        <input type="text" 
+                        name="firstlastname" 
+                        id="firstlastname" 
+                        size="35" 
+                        maxlength="50" 
+                        required 
+                        placeholder="Write your name here" style="font-size: 16px; padding: 5px 10px;"/>
+                    </div>
+                </p>
+                <p>
+                <label for="email" class="required">Your Email: </label>
+                    <div>
+                        <input type="email" 
+                        name="email" 
+                        id="email" 
+                        size="35" 
+                        maxlength="50" 
+                        required 
+                        pattern="[^ @]+@[^ @]+.[a-z]+"
+                        placeholder="name@host.com" style="font-size: 16px; padding: 5px 10px;"/>
+                    </div>
+                    </p>
+            </Fieldset>
+
+            <fieldset>
+                <legend>Tell Me What You Think</legend>
+                <p>
+                <label for="how">How did you find this website? </label>
+                    <div>
+                        <select name="find" id="how" style="font-size: 18px; padding: 5px 10px;">
+                            <option value="Google">Google</option>
+                            <option value="Author">You Showed Me!</option>
+                            <option value="Grader">I'm Grading This</option>
+                            <option value="Discord">Discord</option>
+                            <option value="Other" selected>Other</option>
+                        </select>
+                        </div>
+                </p>
+                <p>
+                <label for="likes">What do you like about this website? </label>
+                    <div>
+                        <input type="checkbox" id="colorScheme" name="colorScheme" checked>
+                        <label for="colorScheme">Color Scheme</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="layout" name="layout" checked>
+                        <label for="layout">Layout</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="pictures" name="pictures" checked>
+                        <label for="pictures">Background and Header</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="font" name="font" checked>
+                        <label for="font">Font Color and Size</label>
+                    </div>
+                </p>
+
+                <p>
+                <label for="thoughts">Do you have any other thoughts?</label>
+                    <div>
+                        <textarea 
+                        name="thoughts" 
+                        id="thoughts" 
+                        size="50"
+                        maxlength="350" 
+                        placeholder="Write 350 characters or less." 
+                        style="font-size: 16px; padding: 5px 10px;"></textarea>
+                    </div>
+                </p>
+
+                <p>
+                <label for="mailingList">Would you like to be added to the mailing list to receive updates on the site?</label>
+                    <div>
+                        <input type="radio" id="yesMail" name="mail" value="yesMail" checked>
+                        <label for="yesMail">Yes</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="noMail" name="mail" value="noMail">
+                        <label for="noMail">No</label>
+                    </div>
+
+                    <div style="text-align:center;">
+                        <input type="submit" value="Submit Form" style="font-size: 20px; padding: 10px 20px;">
+                    </div>
+                </p>
+            </fieldset>
+            </form>
         </section>
     </main>
     <footer>

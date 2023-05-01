@@ -182,18 +182,45 @@
   
   /*  ----- Form ----- */
   form {}
-  fieldset {}
-    legend {}
+  fieldset {
+    padding: 1%;
+  }
+  legend {
+    font-weight:bold;
+    color: var(--acc)
+  }
   label {}
-    button {}
-    input {}
+    button {
+      font-size:110%;
+      padding:1%;
+    }
+    input {
+      font-size:110%;
+      padding:1%;
+    }
     output {}
     meter {}
     progress {}
-    select {}
+    select {
+      font-size:120%;
+      padding:1%;
+    }
       optgroup {}
       option {}
-    textarea {}
+    textarea {
+      font-size:110%;
+      padding:1%;
+    }
+    :focus {
+      background-color:var(--purple);
+    }
+    label.required:after {
+      content:" *";
+      color:var(--accent-color);
+  }
+  ::placeholder {
+    color: var(--deep-blue)
+  }
   
   /* ----- Media ----- */
   figure {

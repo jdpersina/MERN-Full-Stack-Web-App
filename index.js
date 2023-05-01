@@ -6,7 +6,12 @@ const PORT = 3000;
 
 app.use(express.urlencoded({
     extended: true
-}))
+}));
+
+//app.post("/completedForms", (req, res) => {
+    //console.log(req.body);
+    ////res.send(req.body);
+//});
 
 app.use(express.static('public'));
 
@@ -33,13 +38,10 @@ let htmlTop = `
         <a href="contact.html">Contact</a>
     </nav>
     <main>
-        <section>
-            <h2>Contact</h2>
-            <article>
-                
-            </article>
-        </section>
-    </main>
+`;
+
+let htmlBottom = `
+</main>
     <footer>
         <p>&copy; 2023 Dan Persina, Junior at Oregon State.<br> This website is a project for CS 290.</p>
     </footer>
@@ -47,10 +49,25 @@ let htmlTop = `
 </html>
 `;
 
-app.post("completedForms", (req, res) => {
-    
-})
+app.post("/completedForms", (req, res) => {
+    const name = req.body.firstlastname;
+    const email = req.body.email;
+    const find = req.body.find;
+    const likes = req.body.likes;
+    const thoughts = req.body.thoughts;
+    const mailingList = req.body.mailingList;
+
+    res.send(`${htmlTop}
+        <h2>Hey there ${name}</h2>
+        <p>Thank you so much for your feedback on my site. I recorded that you learned of this site through <strong>${find}</strong>, 
+        and I've recorded your email as <strong>${email}</strong> in case I need to reach out to you. You liked 
+        <strong>${likes}</strong> about this site, and we recorded your thoughts for our consideration as well:</p>
+        <p><strong>${thoughts}</strong></p>
+        <p>You responded <strong>${mailingList}</strong> to subscribing for site updates.</p>
+        <p>Thank you for your time, and I hope you'll visit again soon.</p>
+        ${htmlBottom}`);   
+});
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}...`);
+    console.log(`Server listening on port ${PORT}...`);
 });
