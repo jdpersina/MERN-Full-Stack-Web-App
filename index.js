@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+const petProducts = require('./products.js').products;
 
 app.use(express.urlencoded({
     extended: true
@@ -60,6 +61,25 @@ app.post("/completedForms", (req, res) => {
     res.send(`${htmlTop}
         <h2>Hey there ${name}</h2>
         <p>Thank you so much for your feedback on my site. I recorded that you learned of this site through <strong>${find}</strong>, 
+        and I've recorded your email as <strong>${email}</strong> in case I need to reach out to you. You liked 
+        <strong>${likes}</strong> about this site, and we recorded your thoughts for our consideration as well:</p>
+        <p><strong>${thoughts}</strong></p>
+        <p>You responded <strong>${mailingList}</strong> to subscribing for site updates.</p>
+        <p>Thank you for your time, and I hope you'll visit again soon.</p>
+        ${htmlBottom}`);   
+});
+
+app.post("/completedOrders", (req, res) => {
+    const name = req.body.firstlastname;
+    const email = req.body.email;
+    const address = req.body.address;
+    const instructions = req.body.delivInstructions;
+    const product = req.body.product;
+    const quantity = req.body.quantity;
+
+    res.send(`${htmlTop}
+        <h2>Hey there ${name}</h2>
+        <p>Thank you sfor your order of. I recorded that you learned of this site through <strong>${find}</strong>, 
         and I've recorded your email as <strong>${email}</strong> in case I need to reach out to you. You liked 
         <strong>${likes}</strong> about this site, and we recorded your thoughts for our consideration as well:</p>
         <p><strong>${thoughts}</strong></p>
