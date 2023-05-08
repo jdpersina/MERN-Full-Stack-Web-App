@@ -37,6 +37,7 @@ let htmlTop = `
         <a href="index.html">Home</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
+        <a href="order.html">Order</a>
     </nav>
     <main>
 `;
@@ -69,22 +70,32 @@ app.post("/completedForms", (req, res) => {
         ${htmlBottom}`);   
 });
 
+function findProductData(chosenProduct) {
+    for (const item of petProducts) {
+        if (item.product === chosenProduct) {
+            return item;
+        }
+    }
+}
+
 app.post("/completedOrders", (req, res) => {
+    const productOrdered = findProductData(req.body.product);
     const name = req.body.firstlastname;
     const email = req.body.email;
     const address = req.body.address;
     const instructions = req.body.delivInstructions;
-    const product = req.body.product;
     const quantity = req.body.quantity;
+    const formattedPrice = productOrdered.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+    const amountDue = req.body.quantity * productOrdered.price;
+    const formattedTotal = amountDue.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 
     res.send(`${htmlTop}
-        <h2>Hey there ${name}</h2>
-        <p>Thank you sfor your order of. I recorded that you learned of this site through <strong>${find}</strong>, 
-        and I've recorded your email as <strong>${email}</strong> in case I need to reach out to you. You liked 
-        <strong>${likes}</strong> about this site, and we recorded your thoughts for our consideration as well:</p>
-        <p><strong>${thoughts}</strong></p>
-        <p>You responded <strong>${mailingList}</strong> to subscribing for site updates.</p>
-        <p>Thank you for your time, and I hope you'll visit again soon.</p>
+        <h2>Thank you for your order, ${name}</h2>
+        <p>Thank you for your order of <strong>${quantity}</strong> <strong>${productOrdered.product}</strong> by <strong>${productOrdered.company}</strong>.
+        at a price of <strong>${formattedPrice}</strong> The amount due for your order is <strong>${formattedTotal}</strong></p>
+        <p>Your order will be shipped to <strong>${address}</strong> and further details will be sent to <strong>${email}</strong></p>
+        <p>Your delivery instructions:</p>
+        <p><strong>${instructions}</strong></p>
         ${htmlBottom}`);   
 });
 

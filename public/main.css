@@ -165,15 +165,29 @@
   ins {}
   
   /*  ----- Table ----- */
-  table {}
-  caption {}
-  thead {}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  caption {
+  }
+  thead {
+  }
   tbody {}
   tfoot {}
-  tr {}
+  tr {
+  }
     tr:nth-child(even) {}
-  th {}
-  td {}
+  th {
+    padding: 6px;
+    border: 4px var(--dark-blue);
+    color: var(--accent-color);
+  }
+  td {
+    padding: 6px;
+    border: 4px var(--dark-blue);
+    color: purple
+  }
     td:nth-child(1) {}
   colgroup {}
   data {}
@@ -183,7 +197,7 @@
   /*  ----- Form ----- */
   form {}
   fieldset {
-    padding: 1%;
+    padding: 2%;
   }
   legend {
     font-weight:bold;

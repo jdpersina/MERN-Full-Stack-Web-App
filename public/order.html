@@ -30,125 +30,132 @@
 
             <article>
                 <form action="/completedOrders" method="POST">
-                <fieldset>
-                    <legend>Your Details</legend>
+                <div class="fieldset-section">
+                    <fieldset class="left">
+                        <legend>Your Details</legend>
 
-                    <p>
-                    <label for="firstlastname" class="required">Your First and Last Name: </label>
-                        <div>
-                            <input type="text" 
-                            name="firstlastname" 
-                            id="firstlastname" 
-                            size="35" 
-                            maxlength="50" 
-                            required 
-                            placeholder="Write your name here" 
-                            style="font-size: 16px; padding: 5px 10px;"
-                            autofocus/>
-                        </div>
-                    </p>
-
-                    <p>
-                    <label for="email" class="required">Your Email: </label>
-                        <div>
-                            <input type="email" 
-                            name="email" 
-                            id="email" 
-                            size="35" 
-                            maxlength="50" 
-                            required 
-                            pattern="[^ @]+@[^ @]+.[a-z]+"
-                            placeholder="name@host.com" 
-                            style="font-size: 16px; padding: 5px 10px;"/>
-                        </div>
-                    </p>
-
-                    <p>
-                    <label for="address" class="required">Your Address:</label>
-                        <div>
-                            <input type="address"
-                            name="address"
-                            id="address"
-                            size="35"
-                            maxlength="100"
-                            required
-                            placeholder="Street, city, state, zip" 
-                            style="font-size: 16px; padding: 5px 10px;"/>
-                        </div>
-                    </p>
-
-                    <p>
-                        <label for="delivInstructions">Delivery Instructions:</label>
+                        <p>
+                        <label for="firstlastname" class="required">Your First and Last Name: </label>
                             <div>
-                                <input type="delivInstructions"
-                                name="delivInstructions"
-                                id="delivInstructions"
-                                size="35"
-                                maxlength="350"
-                                placeholder='"Leave at side door, ring doorbell, etc."' 
+                                <input type="text" 
+                                name="firstlastname" 
+                                id="firstlastname" 
+                                size="35" 
+                                maxlength="50" 
+                                required 
+                                placeholder="Write your name here" 
+                                style="font-size: 16px; padding: 5px 10px;"
+                                autofocus/>
+                            </div>
+                        </p>
+
+                        <p>
+                        <label for="email" class="required">Your Email: </label>
+                            <div>
+                                <input type="email" 
+                                name="email" 
+                                id="email" 
+                                size="35" 
+                                maxlength="50" 
+                                required 
+                                pattern="[^ @]+@[^ @]+.[a-z]+"
+                                placeholder="name@host.com" 
                                 style="font-size: 16px; padding: 5px 10px;"/>
                             </div>
                         </p>
-                    
-                </fieldset>
-            </article>
 
-            <article>
-                <fieldset>
-                    <legend>Available Products</legend>
+                        <p>
+                        <label for="address" class="required">Your Address:</label>
+                            <div>
+                                <input type="address"
+                                name="address"
+                                id="address"
+                                size="35"
+                                maxlength="100"
+                                required
+                                placeholder="Street, city, state, zip" 
+                                style="font-size: 16px; padding: 5px 10px;"/>
+                            </div>
+                        </p>
 
-                    <table>
-                        <caption>One product may be ordered at a time</caption>
+                        <p>
+                            <label for="delivInstructions">Delivery Instructions:</label>
+                                <div>
+                                    <input type="delivInstructions"
+                                    name="delivInstructions"
+                                    id="delivInstructions"
+                                    size="35"
+                                    maxlength="350"
+                                    placeholder='"Leave at side door, ring doorbell, etc."' 
+                                    style="font-size: 16px; padding: 5px 10px;"/>
+                                </div>
+                            </p>
                         
-                        <thead>
-                            <tr>
-                                <th>Company</th>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Choice</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                            <tr>
-                                <td>AGYM</td>
-                                <td>Spinning Cat Scratcher Ball</td>
-                                <td>$52.99</td>
-                                <td><input type="radio" name="product" value="agym"></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>Jasonwell</td>
-                                <td>Foldable Dog Pool</td>
-                                <td>$27.25</td>
-                                <td><input type="radio" name="product" value="jasonwell"></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>Expawlorer</td>
-                                <td>Dog Fence Window</td>
-                                <td>$30.50</td>
-                                <td><input type="radio" name="product" value="expawlorer"></td>
-                            </tr>
-                            <tr>
-                                <td>Lolimeow</td>
-                                <td>Capsule Pet Travel Backpack</td>
-                                <td>$59.00</td>
-                                <td><input type="radio" name="product" value="lolimeow"></td>
-                            </tr>
-                            <tr>
-                                <td>Drool'd</td>
-                                <td>Cat Hamster Wheel</td>
-                                <td>$349.75</td>
-                                <td><input type="radio" name="product" value="droold"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    </fieldset>
+                </article>
 
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" name="quantity" min="1" max="99" value="1">
+                <article>
+                    <fieldset class="right">
+                        <legend>Available Products</legend>
 
-                </fieldset>
+                        <table>
+                            <caption>One product may be ordered at a time</caption>
+                            
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Choice</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr>
+                                    <td>AGYM</td>
+                                    <td>Spinning Cat Scratcher Ball</td>
+                                    <td>$52.99</td>
+                                    <td><input type="radio" name="product" value="Spinning Cat Scratcher Ball"></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Jasonwell</td>
+                                    <td>Foldable Dog Pool</td>
+                                    <td>$27.25</td>
+                                    <td><input type="radio" name="product" value="Foldable Dog Pool"></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Expawlorer</td>
+                                    <td>Dog Fence Window</td>
+                                    <td>$30.50</td>
+                                    <td><input type="radio" name="product" value="Dog Fence Window"></td>
+                                </tr>
+                                <tr>
+                                    <td>Lolimeow</td>
+                                    <td>Capsule Pet Travel Backpack</td>
+                                    <td>$59.00</td>
+                                    <td><input type="radio" name="product" value="Capsule Pet Travel Backpack"></td>
+                                </tr>
+                                <tr>
+                                    <td>Drool'd</td>
+                                    <td>Cat Hamster Wheel</td>
+                                    <td>$349.75</td>
+                                    <td><input type="radio" name="product" value="Cat Hamster Wheel"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    <div style="text-align: center;">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" name="quantity" min="1" max="99" value="1">
+                    </div>
+
+                    </fieldset>
+                </div>
+                <div style="text-align:center;">
+                    <input type="submit" value="Submit Order" style="font-size: 20px; padding: 10px 20px;">
+                </div>
 
             </article>
             </form>
