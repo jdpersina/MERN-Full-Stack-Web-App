@@ -177,7 +177,8 @@
   tfoot {}
   tr {
   }
-    tr:nth-child(even) {}
+    tr:nth-child(even) td {backgrond-color:var(--light-blue);}
+    tr:nth-child(odd) td {backgrond-color:var(--transparent-gray);}
   th {
     padding: 6px;
     border: 4px var(--dark-blue);

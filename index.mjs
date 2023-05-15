@@ -1,18 +1,18 @@
 'use strict';
 
-const express = require('express');
+import express from 'express';
+import fetch from 'node-fetch';
+import 'dotenv/config';
+import asyncHandler from 'express-async-handler';
+import {products} from './products.js';
+
+
 const app = express();
-const PORT = 3000;
-const petProducts = require('./products.js').products;
+const PORT = process.env.PORT;
 
 app.use(express.urlencoded({
     extended: true
 }));
-
-//app.post("/completedForms", (req, res) => {
-    //console.log(req.body);
-    ////res.send(req.body);
-//});
 
 app.use(express.static('public'));
 
@@ -97,6 +97,20 @@ app.post("/completedOrders", (req, res) => {
         <p>Your delivery instructions:</p>
         <p><strong>${instructions}</strong></p>
         ${htmlBottom}`);   
+});
+
+// getting random data using async and fetch
+app.get('/random-user', asyncHandler(async (req, res) => {
+    const response = await fetch('https://randomuser.me/api/');
+    const data = await response.json();
+    res.send(data);
+
+}));
+
+// status 500 error if API not working
+app.use((err, req, res, next) => {
+    console.error(err.stack)
+    res.status(500).send(`<h2>Uh oh</h2> <p>Something didn't work, try again.</p>`)
 });
 
 app.listen(PORT, () => {
