@@ -4,7 +4,8 @@ import express from 'express';
 import fetch from 'node-fetch';
 import 'dotenv/config';
 import asyncHandler from 'express-async-handler';
-import {products} from './products.js';
+import products from './src/data/products.js';
+
 
 
 const app = express();
